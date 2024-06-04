@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Laravel</title>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+        <link href="../css/style.css" rel="stylesheet" /> 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js" integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        
+
+    </head>
+    <style>
+        /* Animasi Typewriter */
+.typewriter {
+    overflow: hidden; /* Membuat teks tidak muncul di luar area */
+    border-right: .15em solid orange; /* Efek kursor mengetik */
+    white-space: nowrap; /* Agar teks tetap dalam satu baris */
+    margin: 0 auto; /* Menengahkan teks */
+    letter-spacing: .15em; /* Jarak antar huruf */
+    animation: 
+        typing 3.5s steps(30, end),
+        blink-caret .5s step-end infinite;
+}
+
+/* Keyframes untuk animasi mengetik */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* Keyframes untuk efek kursor berkedip */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+
+}
+.fade-in {
+        opacity: 0;
+        transition: opacity 1s ease-in-out; /* Atur durasi dan efek transisi */
+    }
+    .fade-in.show {
+        opacity: 1;
+    }
+    </style>
+<!--  
+ 
+  CSS Blossoming Flowers at Magical Night.
+  I've taken some inspiration by Yup Nguyen's Artwork: https://dribbble.com/shots/11096994-Virtual-Garden.
+  Made with Pure CSS & ♥
+-->
+
+<body class="p-5" style="background-image: url(https://images.pexels.com/photos/907485/pexels-photo-907485.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);">
+<div class="card w-100 h-100" style="background-color: rgba(255,255,255,0.5271358543417367);">
+  <div class="card-body text-center">
+  <h1 class="card-text typewriter" data-text="HI BBY !!!"></h1>
+    <p class="card-text typewriter" data-text="I prepared a small surprise"></p>
+    <p class="card-text typewriter" data-text="just for you"></p>
+    <p class="card-text typewriter" data-text="I hope you like it"></p>
+    <br>
+    <p class="card-text typewriter" data-text="Please Click Here"></p>
+    <!-- <a href="javascript:void(0)" class="btn btn-outline-success" onclick="openmodal()">LOVEYOU</a> -->
+
+    <div class="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-body">
+        <h3>Do You Love me?</h3>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">hmm...</button>
+        <a href="flower.html" type="button" class="btn btn-primary">Yes, I Love You</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ <script>
+    function openmodal(){
+        $('.modal').modal('show');
+
+    }
+
+ </script>
+<script>
+    // Ambil semua elemen dengan kelas 'typewriter'
+    var elements = document.querySelectorAll('.typewriter');
+    
+    // Fungsi untuk membuat efek mengetik pada satu elemen
+    function typeWriterEffect(element, text) {
+        return new Promise(resolve => {
+            var index = 0;
+            var timer = setInterval(function() {
+                if (index < text.length) {
+                    element.textContent += text.charAt(index);
+                    index++;
+                } else {
+                    clearInterval(timer);
+                    resolve(); // Selesaikan promise ketika selesai mengetik
+                }
+            }, 120); // Ganti angka ini untuk mengatur kecepatan mengetik (ms)
+        });
+    }
+    
+    // Fungsi untuk memulai animasi mengetik secara berkelanjutan
+    async function startTypewriters() {
+        for (let i = 0; i < elements.length; i++) {
+            var text = elements[i].getAttribute('data-text');
+            await typeWriterEffect(elements[i], text);
+            
+            // Setelah mengetik selesai, cek apakah ini elemen terakhir
+            if (i === elements.length - 1) {
+                showButton(); // Panggil fungsi untuk menampilkan tombol
+            }
+        }
+    }
+    
+    // Fungsi untuk menampilkan tombol dengan animasi fade
+    function showButton() {
+        var button = document.createElement('a');
+        button.href = 'javascript:void(0)';
+        button.classList.add('btn', 'btn-light', 'fade-in'); // Tambahkan kelas fade-in
+        button.textContent = 'LOVEYOU';
+        button.onclick = function() {
+            openmodal()
+        };
+        
+        var cardBody = document.querySelector('.card-body');
+        cardBody.appendChild(button);
+        
+        // Trigger reflow untuk memicu animasi CSS
+        button.offsetWidth; // Tanpa ini, transisi mungkin tidak berfungsi
+        button.classList.add('show'); // Tambahkan kelas show setelah tombol ditambahkan
+    }
+    
+    // Panggil fungsi startTypewriters untuk memulai animasi
+    startTypewriters();
+</script>
+
+
+
+
+</body>
+</html>
