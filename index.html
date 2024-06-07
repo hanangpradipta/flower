@@ -79,7 +79,7 @@
     <p class="card-text typewriter" data-text="I hope you like it"></p>
     <br>
     <p class="card-text typewriter" data-text="Please Click Here"></p>
-    <a href="javascript:void(0)" class="btn btn-outline-success" onclick="openmodal()">LOVEYOU</a> 
+<!--     <a href="javascript:void(0)" class="btn btn-outline-success" onclick="openmodal()">LOVEYOU</a>  -->
 
     <div class="modal" tabindex="-1">
   <div class="modal-dialog">
@@ -142,7 +142,7 @@
     function showButton() {
         var button = document.createElement('a');
         button.href = 'javascript:void(0)';
-        button.classList.add('btn', 'btn-light', 'fade-in'); // Tambahkan kelas fade-in
+        button.classList.add('btn', 'btn-outline-success', 'fade-in'); // Tambahkan kelas fade-in
         button.textContent = 'LOVEYOU';
         button.onclick = function() {
             openmodal()
