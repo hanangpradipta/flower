@@ -74,9 +74,10 @@
       <br>
           <small class="text-danger">Tampilan yg kemarin aku matiin dulu ya, nanti aku update lagi yang lebih bagus</small>  -->
   <h1 class="card-text typewriter" data-text="HI BBY !!!"></h1>
-    <p class="card-text typewriter" data-text="I prepared a small surprise"></p>
-    <p class="card-text typewriter" data-text="just for you"></p>
-    <p class="card-text typewriter" data-text="I hope you like it"></p>
+    <p class="card-text typewriter" data-text="Congratulations on ur graduatin"></p>
+    <p class="card-text typewriter" data-text="U got best of the best in ur college"></p>
+    <p class="card-text typewriter" data-text="And in my heart"></p>
+    <p class="card-text typewriter" data-text="hehe"></p>
     <br>
     <p class="card-text typewriter" data-text="Please Click Here"></p>
 <!--     <a href="javascript:void(0)" class="btn btn-outline-success" onclick="openmodal()">LOVEYOU</a>  -->
@@ -140,10 +141,11 @@
     
     // Fungsi untuk menampilkan tombol dengan animasi fade
     function showButton() {
-        var button = document.createElement('a');
-        button.href = 'javascript:void(0)';
+        var button = document.createElement('p');
+        // button.href = 'javascript:void(0)';
+        // button.classList.add('btn', 'btn-outline-success', 'fade-in'); // Tambahkan kelas fade-in
         button.classList.add('btn', 'btn-outline-success', 'fade-in'); // Tambahkan kelas fade-in
-        button.textContent = 'LOVEYOU';
+        button.textContent = 'Thankyou for always make me proud of u, aku tau ini bukan perjuangan yang mudah buat kamu, tapi kamu berhasil melewatinya bahkan menjadi lulusan terbaik. tetap semangat menjalani hidup kamu yaa. aku bangga banget sama kamu. LOVEYOU BBY <i class="fas fa-heart"></i>';
         button.onclick = function() {
             openmodal()
         };
